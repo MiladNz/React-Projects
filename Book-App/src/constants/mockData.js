@@ -66,10 +66,10 @@ const books = [
     year: -600,
   },
   {
-    id: img6,
+    id: "006",
     author: "Hanan Al-Shaykh",
     country: "India/Iran/Iraq/Egypt/Tajikistan",
-    image: "6.png",
+    image: img6,
     language: "Arabic",
     link: "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\n",
     pages: 288,
