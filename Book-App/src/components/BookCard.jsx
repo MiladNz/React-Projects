@@ -1,4 +1,11 @@
+import { useState } from "react";
+import { AiFillHeart } from "react-icons/ai";
+
 function BookCard({ data: { title, author, image, language, pages } }) {
+  const [like, setLike] = useState(false);
+  const likeHandler = () => {
+    setLike((like) => !like);
+  };
   return (
     <div>
       <img src={image} alt={title} />
@@ -10,7 +17,9 @@ function BookCard({ data: { title, author, image, language, pages } }) {
           <span>{pages} pages</span>
         </div>
       </div>
-      <button>Like</button>
+      <button onClick={likeHandler}>
+        <AiFillHeart color={like ? "red" : "#e0e0e0"} fontSize="1.8rem" />
+      </button>
     </div>
   );
 }
