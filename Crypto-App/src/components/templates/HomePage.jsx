@@ -12,11 +12,6 @@ function HomePage() {
     };
     getData();
   }, []);
-  // useEffect(() => {
-  //   fetch(getCoinList())
-  //     .then((res) => res.json())
-  //     .then((json) => setCoins(json));
-  // }, []);
   return (
     <div>
       <TableCoin coins={coins} />
