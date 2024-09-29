@@ -39,8 +39,8 @@ function TableCoin({ coins, isLoading, currency, setChart }) {
 
 export default TableCoin;
 
-const TableRow = ({
-  coin: {
+const TableRow = ({ coin, currency, setChart }) => {
+  const {
     id,
     name,
     image,
@@ -48,16 +48,12 @@ const TableRow = ({
     current_price,
     price_change_percentage_24h,
     total_volume,
-  },
-  currency,
-  setChart,
-}) => {
+  } = coin;
   const showHandler = async () => {
     try {
       const response = await fetch(marketChart(id));
       const json = await response.json();
-      console.log(json);
-      setChart(json);
+      setChart({ ...json, coin });
     } catch (error) {
       setChart(null);
     }
